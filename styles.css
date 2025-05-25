@@ -1,0 +1,981 @@
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes ping-slow {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float-text {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 5px rgba(34, 197, 94, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(34, 197, 94, 0.8); }
+}
+
+@keyframes float-particle {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+}
+
+@keyframes spin-slow {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-right {
+    animation: slideRight 0.6s ease-out forwards;
+}
+
+.animate-scale {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-spin-slow {
+    animation: spin-slow 2s linear infinite;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #22c55e, #4ade80, #22c55e);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 3s ease infinite;
+}
+
+/* Hover Effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+.hover-lift {
+    @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+}
+
+.hover-lift:hover .w-16 {
+    @apply bg-green-200;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+}
+
+.hover-text {
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    cursor: default;
+}
+
+.hover-text:hover {
+    transform: translateY(-5px);
+    color: #4ade80;
+    text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
+}
+
+/* Background Images */
+.hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                     url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.features-bg {
+    background-image: url('https://images.unsplash.com/photo-1581093458791-9d42e3c2f4d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.login-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                     url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.register-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                     url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.forgot-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                     url('https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.seller-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                     url('https://images.unsplash.com/photo-1581093804475-577d72e82a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.browse-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+                     url('https://images.unsplash.com/photo-1585975754487-5f8b8815e80d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-pattern {
+    background-image: url('https://images.unsplash.com/photo-1565098772267-60af42b81ef2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.team-bg {
+    background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.list-waste-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+                     url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.connect-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+                     url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.trade-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+                     url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Overlay */
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Form Styles */
+.form-input {
+    @apply appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm;
+}
+
+.btn-primary {
+    @apply bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300;
+}
+
+.btn-secondary {
+    @apply border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 transition-colors duration-300;
+}
+
+/* Add to your existing styles */
+.model-container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    position: relative;
+}
+
+.model-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.model-container:hover::after {
+    opacity: 1;
+}
+
+.model-container canvas {
+    transition: transform 0.5s ease;
+}
+
+.model-container:hover canvas {
+    transform: scale(1.1) rotateY(10deg);
+}
+
+/* Add glowing effect for buttons */
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.4) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-glow:hover::after {
+    opacity: 1;
+}
+
+/* Add particle effect */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(74, 222, 128, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-particle 3s infinite;
+}
+
+/* Navigation Styles */
+.nav-link {
+    @apply relative py-2 text-white/90 hover:text-white transition-colors duration-300;
+}
+
+.nav-link.active {
+    @apply text-white;
+}
+
+.nav-link.active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-100;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-300;
+}
+
+.nav-link:hover::after {
+    @apply scale-x-100;
+}
+
+.mobile-nav-link {
+    @apply block py-2 px-4 text-white/90 hover:text-white hover:bg-green-700/50 rounded-lg transition-colors duration-300;
+}
+
+.mobile-nav-link.active {
+    @apply bg-green-700/50 text-white;
+}
+
+.mobile-nav-btn-primary {
+    @apply block py-2 px-4 bg-white text-green-600 rounded-lg text-center hover:bg-green-50 transition-colors duration-300;
+}
+
+.mobile-nav-btn-secondary {
+    @apply block py-2 px-4 border-2 border-white text-white rounded-lg text-center hover:bg-white hover:text-green-600 transition-colors duration-300;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    @apply w-6 h-6 flex flex-col justify-around;
+}
+
+.hamburger span {
+    @apply block w-full h-0.5 bg-white transform transition-all duration-300;
+}
+
+.hamburger.active span:nth-child(1) {
+    @apply rotate-45 translate-y-2;
+}
+
+.hamburger.active span:nth-child(2) {
+    @apply opacity-0;
+}
+
+.hamburger.active span:nth-child(3) {
+    @apply -rotate-45 -translate-y-2;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    @apply relative overflow-hidden;
+    min-height: 100vh;
+}
+
+/* Increase text visibility */
+.hero-section::before {
+    content: '';
+    @apply absolute inset-0 bg-black/40 z-[1];
+}
+
+.hero-section > * {
+    @apply relative z-10;
+}
+
+/* Update navbar background */
+.nav-scrolled {
+    @apply bg-green-600/95 backdrop-blur-md shadow-lg;
+}
+
+/* Update navbar initial state */
+#mainNav {
+    @apply bg-transparent;
+    transition: background-color 0.3s ease;
+}
+
+#mainNav.nav-scrolled {
+    @apply bg-green-600/95 backdrop-blur-md shadow-lg;
+}
+
+/* Creative Navbar Styles */
+.nav-text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-green-200;
+}
+
+.nav-item {
+    @apply relative px-4 py-2 text-white/90 hover:text-white transition-all duration-300;
+}
+
+.nav-item::before {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-300 to-green-100 
+           transform scale-x-0 transition-transform duration-300 origin-left;
+}
+
+.nav-item:hover::before,
+.nav-item.active::before {
+    transform: scaleX(1);
+}
+
+.nav-text {
+    @apply relative inline-block;
+}
+
+.nav-text::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300;
+}
+
+.nav-item:hover .nav-text::after {
+    @apply w-full;
+}
+
+.nav-btn-primary {
+    @apply relative px-6 py-2 bg-white text-green-600 rounded-full font-medium 
+           overflow-hidden transition-all duration-300 hover:shadow-lg 
+           hover:-translate-y-0.5;
+}
+
+.btn-shine {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
+           -translate-x-full hover:translate-x-full transition-transform duration-1000;
+}
+
+.nav-btn-secondary {
+    @apply relative px-6 py-2 border-2 border-white text-white rounded-full font-medium 
+           overflow-hidden transition-all duration-300 hover:shadow-lg 
+           hover:-translate-y-0.5 hover:bg-white hover:text-green-600;
+}
+
+.btn-glow {
+    @apply absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300;
+}
+
+.nav-btn-secondary:hover .btn-glow {
+    @apply opacity-100;
+}
+
+/* Mobile Nav Styles */
+.mobile-nav-item {
+    @apply block px-4 py-2 text-white/90 hover:text-white transition-all duration-300 
+           rounded-lg hover:bg-white/10;
+}
+
+.mobile-nav-item.active {
+    @apply bg-white/10 text-white;
+}
+
+.mobile-nav-btn-primary {
+    @apply block text-center px-6 py-2 bg-white text-green-600 rounded-full font-medium 
+           transition-all duration-300 hover:bg-green-50;
+}
+
+.mobile-nav-btn-secondary {
+    @apply block text-center px-6 py-2 border-2 border-white text-white rounded-full font-medium 
+           transition-all duration-300 hover:bg-white hover:text-green-600;
+}
+
+/* Hamburger Animation */
+.hamburger {
+    @apply w-6 h-5 relative transform transition-all duration-300;
+}
+
+.hamburger span {
+    @apply block absolute h-0.5 w-full bg-white transform transition-all duration-300;
+}
+
+.hamburger span:first-child {
+    @apply top-0;
+}
+
+.hamburger span:nth-child(2) {
+    @apply top-1/2 -translate-y-1/2;
+}
+
+.hamburger span:last-child {
+    @apply bottom-0;
+}
+
+.hamburger.active span:first-child {
+    @apply top-1/2 rotate-45;
+}
+
+.hamburger.active span:nth-child(2) {
+    @apply opacity-0;
+}
+
+.hamburger.active span:last-child {
+    @apply bottom-1/2 -rotate-45;
+}
+
+/* Animated Buttons */
+.animated-btn-primary {
+    @apply px-8 py-4 bg-white text-green-600 rounded-lg font-semibold 
+           transform hover:-translate-y-1 transition-all duration-300
+           hover:shadow-[0_10px_20px_rgba(34,197,94,0.2)]
+           active:translate-y-0 active:shadow-none
+           text-lg;
+}
+
+.animated-btn-secondary {
+    @apply px-8 py-4 border-2 border-white text-white rounded-lg font-semibold
+           transform hover:-translate-y-1 transition-all duration-300
+           hover:shadow-[0_10px_20px_rgba(255,255,255,0.2)]
+           active:translate-y-0 active:shadow-none
+           relative overflow-hidden
+           text-lg;
+}
+
+/* Shine effect */
+.btn-shine {
+    @apply absolute inset-0 w-[200%] -translate-x-full;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%
+    );
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+/* Pulse effect */
+.btn-pulse {
+    @apply absolute inset-0 scale-100 rounded-lg;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hover state animations */
+.animated-btn-primary:hover .btn-shine {
+    animation: shine 1.5s infinite;
+}
+
+.animated-btn-secondary:hover {
+    @apply bg-white text-green-600;
+}
+
+.animated-btn-secondary:hover .btn-pulse {
+    animation: none;
+}
+
+/* Active state animations */
+.animated-btn-primary:active,
+.animated-btn-secondary:active {
+    transform: translateY(0);
+    transition: transform 0.1s;
+}
+
+/* Update navbar styles */
+nav {
+    @apply fixed w-full z-50;
+    top: 0;
+}
+
+/* Ensure content flows correctly under fixed navbar */
+body {
+    padding-top: 0; /* Remove any top padding if present */
+}
+
+/* Green Mega Button Styles */
+.mega-btn-green {
+    @apply px-12 py-6 bg-green-600 text-white rounded-xl font-bold
+           transform hover:-translate-y-2 transition-all duration-300
+           hover:shadow-[0_20px_40px_rgba(34,197,94,0.3)]
+           hover:bg-green-500
+           active:translate-y-0 active:shadow-none
+           text-xl relative overflow-hidden
+           flex items-center justify-center
+           min-w-[200px];
+    animation: float 3s ease-in-out infinite;
+}
+
+/* White Shine Effect */
+.btn-shine-white {
+    @apply absolute inset-0 w-[300%] -translate-x-full;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    animation: mega-shine 3s infinite;
+}
+
+/* White Glow Effect */
+.btn-glow-white {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+}
+
+.mega-btn-green:hover .btn-glow-white {
+    @apply opacity-100;
+    animation: pulse-glow 2s infinite;
+}
+
+/* White Pulse Effect */
+.btn-pulse-white {
+    @apply absolute inset-0 scale-100 rounded-xl;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: pulse 2s infinite;
+}
+
+/* White Ripple Effect */
+.btn-ripple-white {
+    @apply absolute inset-0 opacity-0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+}
+
+.mega-btn-green:hover .btn-ripple-white {
+    @apply opacity-100;
+    animation: ripple 1.5s infinite;
+}
+
+/* Enhanced Hover State */
+.mega-btn-green:hover {
+    transform: translateY(-10px) scale(1.02);
+    @apply bg-green-500;
+    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3),
+                0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+/* Hover Animation */
+@keyframes button-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); }
+}
+
+.mega-btn-green:hover {
+    animation: button-glow 2s infinite, float 3s ease-in-out infinite;
+}
+
+/* Green CTA Button Styles */
+.cta-btn-green {
+    @apply px-10 py-5 bg-green-500 text-white rounded-lg font-bold
+           transform transition-all duration-300
+           hover:bg-green-400
+           hover:shadow-[0_10px_20px_rgba(34,197,94,0.4)]
+           flex items-center justify-center
+           min-w-[220px]
+           text-xl;
+    background: linear-gradient(to right, #22c55e, #16a34a);
+}
+
+.cta-btn-green:hover {
+    background: linear-gradient(to right, #16a34a, #15803d);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5),
+                0 0 15px rgba(34, 197, 94, 0.4);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.cta-btn-green:active {
+    @apply transform scale-95;
+    background: linear-gradient(to right, #15803d, #166534);
+}
+
+/* Add this for the icon animation */
+.cta-btn-green:hover svg {
+    @apply transform translate-x-2;
+}
+
+/* Fancy Green Button Styles */
+.fancy-btn-green {
+    @apply relative px-12 py-6 text-white rounded-xl font-bold
+           transform transition-all duration-500
+           flex items-center justify-center
+           min-w-[240px]
+           overflow-hidden;
+    background: linear-gradient(135deg, #059669, #16a34a);
+    box-shadow: 0 10px 20px rgba(22, 163, 74, 0.2);
+}
+
+.fancy-btn-green::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.fancy-btn-green::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+}
+
+.fancy-btn-green:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(22, 163, 74, 0.3),
+                0 0 20px rgba(22, 163, 74, 0.2);
+}
+
+.fancy-btn-green:hover::before {
+    @apply opacity-100;
+}
+
+.fancy-btn-green:hover::after {
+    @apply opacity-100;
+    animation: btn-glow 2s infinite;
+}
+
+.fancy-btn-green:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 5px 15px rgba(22, 163, 74, 0.2);
+}
+
+/* Button Shine Effect */
+.btn-shine {
+    @apply absolute inset-0 w-[200%] -translate-x-full;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%
+    );
+}
+
+.fancy-btn-green:hover .btn-shine {
+    animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+    100% { transform: translateX(50%); }
+}
+
+@keyframes btn-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+/* Add a subtle pulse to draw attention */
+.fancy-btn-green {
+    animation: subtle-pulse 3s infinite;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* Professional Button Styles */
+.pro-btn-green {
+    @apply inline-flex items-center justify-center
+           px-8 py-4 
+           text-lg font-semibold text-white
+           rounded-lg
+           transition-all duration-300
+           min-w-[200px]
+           relative
+           overflow-hidden;
+    background: linear-gradient(to bottom, #10b981, #059669);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.pro-btn-green:hover {
+    background: linear-gradient(to bottom, #059669, #047857);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15), 
+                0 3px 6px -2px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.pro-btn-green:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 
+                0 1px 2px -1px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-content {
+    @apply flex items-center justify-center
+           relative z-10
+           font-semibold;
+}
+
+/* Button hover effect */
+.pro-btn-green::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.pro-btn-green:hover::before {
+    @apply opacity-100;
+}
+
+/* Smooth icon transition */
+.pro-btn-green svg {
+    @apply transition-transform duration-300;
+}
+
+.pro-btn-green:hover svg {
+    @apply transform translate-x-1;
+}
+
+/* Responsive Container */
+.container {
+    @apply px-4 mx-auto;
+    max-width: 100%;
+}
+
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1280px; } }
+
+/* Responsive Grid */
+.grid-cols-responsive {
+    @apply grid grid-cols-1 gap-6;
+}
+
+@media (min-width: 640px) { .grid-cols-responsive { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid-cols-responsive { grid-template-columns: repeat(3, 1fr); } }
+
+/* Responsive Text */
+.text-responsive {
+    @apply text-base md:text-lg lg:text-xl;
+}
+
+.heading-responsive {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+}
+
+/* Responsive Padding/Margin */
+.section-padding {
+    @apply py-8 md:py-12 lg:py-16;
+}
+
+.section-margin {
+    @apply my-8 md:my-12 lg:my-16;
+}
+
+/* Responsive Images */
+.img-responsive {
+    @apply w-full h-auto object-cover;
+    aspect-ratio: 16/9;
+}
+
+/* Responsive Forms */
+.form-container {
+    @apply w-full max-w-md mx-auto px-4 md:px-0;
+}
+
+.input-responsive {
+    @apply w-full px-3 py-2 text-base md:text-lg;
+}
+
+/* Mobile Menu Improvements */
+@media (max-width: 767px) {
+    /* Adjust logo size for mobile */
+    .logo-text {
+        @apply text-lg;
+    }
+
+    /* Mobile menu container */
+    #mobileMenu {
+        @apply absolute top-full left-0 right-0 bg-green-600 shadow-lg;
+        max-height: calc(100vh - 64px); /* Adjust based on your navbar height */
+        overflow-y: auto;
+    }
+
+    /* Mobile menu links */
+    .mobile-nav-link {
+        @apply block w-full text-white hover:bg-green-700 transition-colors duration-300 text-base;
+    }
+
+    /* Mobile menu buttons */
+    .mobile-nav-btn-primary {
+        @apply block w-full bg-white text-green-600 rounded-lg text-center hover:bg-green-50 transition-colors duration-300 text-base;
+    }
+
+    .mobile-nav-btn-secondary {
+        @apply block w-full border-2 border-white text-white rounded-lg text-center hover:bg-white hover:text-green-600 transition-colors duration-300 text-base;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+        @apply w-6 h-6 flex flex-col justify-center items-center;
+    }
+
+    .hamburger span {
+        @apply block w-6 h-0.5 bg-white my-0.5 transition-all duration-300;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        @apply transform rotate-45 translate-y-1.5;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        @apply opacity-0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        @apply transform -rotate-45 -translate-y-1.5;
+    }
+}
+
+/* Navigation container */
+nav {
+    @apply relative;
+    min-height: 64px; /* Fixed height for mobile */
+}
+
+/* Container padding adjustments */
+.container {
+    @apply px-4;
+}
+
+/* Logo container */
+.logo-container {
+    @apply flex items-center;
+}

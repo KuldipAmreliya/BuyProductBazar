@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - BuyProductBazar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js" defer></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .register-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                             url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* Mobile Menu Styles */
+        .mobile-nav-link {
+            @apply block py-2 px-4 text-white hover:bg-green-700 rounded-lg transition-colors duration-300;
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            @apply w-6 h-6 flex flex-col justify-around cursor-pointer;
+        }
+
+        .hamburger span {
+            @apply block w-full h-0.5 bg-white transform transition-all duration-300;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            @apply rotate-45 translate-y-2;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            @apply opacity-0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            @apply -rotate-45 -translate-y-2;
+        }
+
+        /* Mobile Menu Container */
+        #mobileMenu {
+            @apply absolute left-0 right-0 bg-green-600 shadow-lg;
+            top: 100%;
+        }
+
+        /* Ensure mobile menu appears above other content */
+        nav {
+            @apply relative z-50;
+        }
+
+        /* Add backdrop blur for better visibility */
+        .mobile-menu-backdrop {
+            @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+        }
+    </style>
+</head>
+<body class="register-bg">
+    <!-- Navigation -->
+    <nav class="bg-green-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold">BuyProductBazar</a>
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="index.html" class="hover:text-green-200">Home</a>
+                    <a href="browse-materials.html" class="hover:text-green-200">Buy</a>
+                    <a href="start-selling.html" class="hover:text-green-200">Sell</a>
+                    <a href="about.html" class="hover:text-green-200">About</a>
+                    <a href="login.html" class="hover:text-green-200">Login</a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="browse-materials.html" class="mobile-nav-link">Buy</a>
+                    <a href="start-selling.html" class="mobile-nav-link">Sell</a>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="login.html" class="mobile-nav-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="mobileMenuBackdrop" class="mobile-menu-backdrop hidden"></div>
+
+    <!-- Registration Form -->
+    <div class="min-h-screen flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-6 bg-white p-6 sm:p-8 rounded-lg shadow-md animate-fade-in">
+            <div>
+                <h2 class="mt-4 sm:mt-6 text-center text-2xl sm:text-3xl font-extrabold text-gray-900">Create your account</h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Already have an account?
+                    <a href="login.html" class="font-medium text-green-600 hover:text-green-500">
+                        Sign in
+                    </a>
+                </p>
+            </div>
+            <form class="mt-6 sm:mt-8 space-y-4 sm:space-y-6" id="registrationForm">
+                <div class="rounded-md shadow-sm space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
+                            <input id="first-name" name="firstName" type="text" required
+                                class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                                placeholder="Satyam">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
+                            <input id="last-name" name="lastName" type="text" required
+                                class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                                placeholder="Patel">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required
+                            class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                            placeholder="satyam@example.com">
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input id="password" name="password" type="password" required
+                            class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                            placeholder="••••••••">
+                    </div>
+
+                    <div>
+                        <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                        <input id="confirm-password" name="confirmPassword" type="password" required
+                            class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <input id="terms" name="terms" type="checkbox" required
+                        class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                    <label for="terms" class="ml-2 block text-sm text-gray-900">
+                        I agree to the 
+                        <a href="#" class="text-green-600 hover:text-green-500">Terms and Conditions</a>
+                        and
+                        <a href="#" class="text-green-600 hover:text-green-500">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div>
+                    <button type="submit"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                        Create Account
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+            const hamburger = menuBtn.querySelector('.hamburger');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuBackdrop.classList.toggle('hidden');
+                hamburger.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking backdrop
+            mobileMenuBackdrop.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBackdrop.classList.add('hidden');
+                hamburger.classList.remove('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBackdrop.classList.add('hidden');
+                    hamburger.classList.remove('active');
+                }
+            });
+
+            // Close mobile menu when window is resized to desktop view
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) { // md breakpoint
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBackdrop.classList.add('hidden');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
